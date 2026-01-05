@@ -1,0 +1,418 @@
+/* =========================================
+   1. VARIABLES Y BASE (Común a todas)
+   ========================================= */
+:root {
+    --rojo: #e63946;
+    --verde: #2a9d8f;
+    --dorado: #e9c46a;
+    --oscuro: #1d3557;
+    --blanco: #ffffff;
+    --negro: #000000;
+}
+
+* { margin:0; padding:0; box-sizing: border-box; }
+
+body { 
+    font-family: 'Oswald', sans-serif; 
+    background: var(--blanco); 
+    color: var(--oscuro); 
+    overflow-x: hidden;
+}
+
+/* --- Navegación --- */
+header { 
+    background: var(--oscuro); 
+    padding: 15px 0; 
+    position: sticky; 
+    top:0; 
+    z-index: 1000; 
+    border-bottom: 5px solid var(--negro); 
+}
+
+nav { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    max-width: 1200px; 
+    margin: auto; 
+    padding: 0 20px;
+}
+
+.logo { 
+    font-family: 'Bangers', cursive; 
+    font-size: 2.2rem; 
+    color: var(--dorado); 
+    text-shadow: 2px 2px 0px var(--rojo);
+}
+
+nav ul { display: flex; list-style: none; gap: 20px; }
+nav a { 
+    color: white; 
+    text-decoration: none; 
+    font-weight: bold; 
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+nav a:hover { color: var(--dorado); }
+
+/* =========================================
+   2. ESTILOS DE COMPONENTES REUTILIZABLES
+   ========================================= */
+.container { max-width: 1100px; margin: auto; padding: 0 20px; }
+
+.section-padding { padding: 80px 0; }
+
+.section-title { 
+    font-family: 'Bangers'; 
+    font-size: 4rem; 
+    text-align: center; 
+    margin-bottom: 50px; 
+    color: var(--oscuro);
+    text-shadow: 4px 4px 0px var(--dorado);
+    text-transform: uppercase;
+}
+
+.dark-bg { background: var(--oscuro); color: white; }
+.dark-bg .section-title { color: var(--dorado); text-shadow: 4px 4px 0px var(--rojo); }
+
+/* Botones con estilo Pop-Art */
+.btn-cta { 
+    display: inline-block;
+    background: var(--rojo); 
+    color: white; 
+    padding: 15px 35px; 
+    text-decoration: none; 
+    font-weight: bold; 
+    border: 4px solid var(--negro); 
+    box-shadow: 6px 6px 0px var(--negro);
+    transition: 0.2s;
+}
+.btn-cta:hover { transform: translate(-3px, -3px); box-shadow: 9px 9px 0px var(--negro); }
+
+/* =========================================
+   3. PÁGINA ESPECÍFICA: INICIO (Hero)
+   ========================================= */
+.hero { 
+    height: 90vh; 
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), 
+                url('https://images.unsplash.com/photo-1511268011861-691ed210aae8?q=80&w=1920');
+    background-size: cover; background-position: center;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+}
+.botones-hero {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.btn {
+  padding: 14px 28px;
+  font-weight: bold;
+  font-size: 14px;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Botón rojo */
+.btn-cuento {
+  background-color: #e63946;
+  color: #fff;
+}
+
+/* Botón verde */
+.btn-video {
+  background-color: #2ec4b6;
+  color: #fff;
+}
+
+/* Hover */
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+}
+
+.banner-xmas { 
+    font-family: 'Bangers'; 
+    font-size: 10vw; 
+    color: var(--dorado); 
+    text-shadow: 6px 6px 0px var(--rojo), 10px 10px 0px var(--negro);
+}
+
+/* =========================================
+   4. PÁGINA ESPECÍFICA: ACTIVIDADES / EVENTOS
+   ========================================= */
+.activity-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px; 
+}
+.logo-titulo {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* espacio entre logo y texto */
+}
+
+.logo {
+  height: 100px; /* AJUSTA hasta que coincida con el texto */
+  width: auto;
+}
+    .activity-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+/* CARD */
+.act-card {
+  width: 320px;
+  background: #fff;
+  border: 4px solid #000;
+  padding: 20px;
+  box-shadow: 10px 10px 0 #f2c94c;
+  text-align: center;
+}
+
+/* IMÁGENES ABAJO */
+.act-card img {
+  margin-top: 20px;
+  width: 100%;
+  border: 4px solid #ffffff;
+  box-shadow: 6px 6px 0 #ffffff;
+}
+
+.titulo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #FFD36A; /* el color que ya usas */
+  font-family: inherit;
+}
+.logo {
+  height: 30px; /* o 40px */
+}
+
+.act-card { 
+    background: white; 
+    color: var(--negro); 
+    padding: 30px; 
+    border: 5px solid var(--negro); 
+    box-shadow: 12px 12px 0px var(--dorado);
+    transition: 0.3s;
+}
+
+.act-card:hover { transform: scale(1.03) rotate(1deg); }
+.act-card h4 { font-family: 'Bangers'; font-size: 2rem; color: var(--rojo); margin-bottom: 10px; }
+
+/* =========================================
+   5. PÁGINA ESPECÍFICA: GALERÍA
+   ========================================= */
+.gallery-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 15px; 
+}
+
+.gallery-item { 
+    border: 5px solid var(--negro); 
+    overflow: hidden; 
+    height: 300px;
+    box-shadow: 8px 8px 0px var(--oscuro);
+}
+
+.gallery-item img { 
+    width: 100%; height: 100%; 
+    object-fit: cover; 
+    transition: 0.5s; 
+    filter: grayscale(30%);
+}
+
+.gallery-item:hover img { filter: grayscale(0%); transform: scale(1.1); }
+
+/* =========================================
+   6. PÁGINA ESPECÍFICA: CONTACTO
+   ========================================= */
+  .contact-subtitle {
+  color: #ffffff;
+}
+
+   .contacto {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}   
+
+.contacto {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* TÍTULO */
+.section-title {
+    font-size: 56px;
+    font-weight: 900;
+    color: #ff0000; /* amarillo */
+    letter-spacing: 2px;
+
+    text-shadow:section-title
+        -3px -3px 0 #ffffff,
+         3px -3px 0 #ffffff,
+        -3px  3px 0 #ffffff,
+         3px  3px 0 #ffffff; /* borde azul oscuro */
+
+    margin-bottom: 10px;
+}
+
+/* SUBTÍTULO */
+.contacto p {
+    font-size: 18px;
+    color: #ffffff; /* azul suave */
+    margin-top: 0;
+}
+
+/* Caja de contacto */
+.contacto-box {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 400px;
+  color: white;
+  z-index: 2;
+}
+
+/* Formulario */
+.contacto-box input,
+.contacto-box textarea {
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+}
+
+.contacto-box button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #00bcd4;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.comic-form { 
+    background: white; 
+    padding: 40px; 
+    border: 6px solid var(--negro); 
+    max-width: 650px; 
+    margin: auto;
+    box-shadow: 15px 15px 0px var(--verde);
+}
+
+.comic-form input, .comic-form textarea { 
+    width: 100%;
+    padding: 15px; 
+    margin-bottom: 20px;
+    border: 4px solid var(--negro); 
+    font-family: 'Oswald';
+    font-size: 1.2rem;
+}
+
+.comic-form button { 
+    width: 100%;
+    background: var(--rojo); 
+    color: white; 
+    padding: 20px; 
+    border: 4px solid var(--negro); 
+    font-family: 'Bangers'; 
+    font-size: 1.8rem; 
+    cursor: pointer;
+    box-shadow: 5px 5px 0px var(--negro);
+}
+
+.comic-form button:hover { background: var(--negro); color: var(--dorado); transform: translateY(-3px); }
+/* Video */
+.video-fondo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* Oscurecer el video */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+/* =========================================
+   7. FOOTER Y EXTRAS
+   ========================================= */
+   
+footer { 
+    background: var(--negro); 
+    color: white; 
+    padding: 50px 20px; 
+    text-align: center; 
+    border-top: 8px solid var(--rojo); 
+}
+
+/* Efecto Nieve (Controlado por JS) */
+.flake {
+    position: fixed;
+    top: -10px;
+    color: white;
+    font-size: 1rem;
+    z-index: 9999;
+    pointer-events: none;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to { transform: translateY(105vh); }
+}
+
+.hero-subtitulo {
+  color: #ffffff;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+}
+
+/* FOOTER */
+.footer {
+  width: 100%;
+  background-color: #000;
+  border-top: 6px solid #e63946; /* línea roja */
+  padding: 25px 0;
+  text-align: center;
+}
+
+.footer p {
+  margin: 0;
+  color: #ffffff;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
